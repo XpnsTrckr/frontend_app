@@ -1,6 +1,11 @@
 name: xpns_trckr_app
 
-on: [pull_request, push]
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**.dart"
 
 jobs:
   semantic-pull-request:
