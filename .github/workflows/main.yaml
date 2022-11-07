@@ -2,14 +2,18 @@ name: xpns_trckr_app
 
 on:
   pull_request:
-    branches:
-      - main
     paths:
+      - ".github/workflows/main.yaml"
       - "**.dart"
 
 jobs:
   semantic-pull-request:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
+
+  pana:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
+    with:
+      min_score: 95
 
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
